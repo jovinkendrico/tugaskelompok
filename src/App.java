@@ -7,6 +7,7 @@ public class App {
         String ulang = "y";
         while(ulang.equalsIgnoreCase("y")){
             pilihan = pilihMenu(keyboard);
+            bersihkanLayar();
             if(pilihan==1){
                 volumeBalok(keyboard);
             }else if(pilihan==2){
@@ -18,11 +19,16 @@ public class App {
             }else if(pilihan==5){
                 volumeLimasSegitiga(keyboard);
             }else{
+                bersihkanLayar();
+                System.out.print("Sampai Jumpa!");
                 break;
             }
             System.out.print("Apakah anda ingin mengulang program menghitung bangun ruang(y/n) = ");
             ulang = keyboard.next();
-            bersihkanLayar();
+            if (ulang.equalsIgnoreCase("n")) {
+                bersihkanLayar();
+                System.out.print("Sampai Jumpa!");
+            }
         }
     }
 
